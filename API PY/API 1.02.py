@@ -28,8 +28,10 @@ def pegardados_ticker():
     #dadosAPI = (dadosAPI.to_string())
     dadosAPI = pd.DataFrame(dadosAPI)
     dadosColuna = dadosAPI.iloc[-1]
-    '''print (dadosColuna.first_valid_index())'''
-    return dadosColuna.last_valid_index()  # cada indice representa uma ação da lista - quando for trocar a ação, troque o indice
+    '''
+    print (dadosColuna.first_valid_index())
+    '''
+    return dadosColuna.first_valid_index()  # cada indice representa uma ação da lista - quando for trocar a ação, troque o indice
 
 
 # Rodar API
