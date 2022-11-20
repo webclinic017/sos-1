@@ -19,7 +19,7 @@ end_d = datetime.now()
 
 # daily
 yahoo_data = yf.download(tickers=tickers,
-                         start=end_d - timedelta(days=7),
+                         start=end_d - timedelta(days=30),
                          end=end_date, interval='1d')
 
 # intraday
@@ -72,7 +72,7 @@ def Volume_Projetado(VolumeAtual):
 
 # DELTA AVAT
 # Volume Projetado
-last_two = yf.download(tickers=tickers, period='3d',
+last_two = yf.download(tickers=tickers, period='7d',
                        interval='1d')['Volume'].iloc[:-1]
 last_two.iloc[:-1] = Volume_Projetado(last_two.iloc[:-1])
 last_two = (last_two)
